@@ -1,6 +1,6 @@
 Package.describe({
   summary: "Exposes internal Meteor APIs",
-  version: "2.3.1",
+  version: "2.4.1",
   git: "https://github.com/montiapm/meteorx.git",
   name: "montiapm:meteorx",
 });
@@ -17,9 +17,9 @@ Package.onTest(function(api) {
 });
 
 function configurePackage(api) {
-  api.versionsFrom("METEOR@1.4");
-  api.use(["random@1.0.1||2.0.0-alpha300.10", "ecmascript@0.7.3||1.0.0-alpha300.10"], "server");
+  api.versionsFrom("METEOR@3.0-beta.0");
+  api.use(["random", "ecmascript"], "server");
 
-  api.use(["mongo@1.1.24||2.0.0-alpha300.10", "ddp-server@1.3.9||2.0.0||3.0.0-alpha300.10"], "server");
+  api.use(["mongo", "ddp-server"], "server");
   api.addFiles(["src/livedata.js", "src/mongo-livedata.js", "src/server.js"], "server");
 }
